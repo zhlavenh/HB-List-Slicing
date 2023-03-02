@@ -236,11 +236,20 @@ def sum_repeats(input_list):
 
     """
     sum = 0
+    ex_list =[]
 
+    input_list.sort()
 
+    # for index, digit in enumerate(input_list):
     for index in range(len(input_list) -1):
-        if input_list[index] == input_list[index + 1]:
-            sum += input_list[index]
+        if (input_list[index] == input_list[index + 1]):
+            if input_list[index] not in ex_list:
+                ex_list.append(input_list[index])
+                sum += input_list[index]
+
+    # for index in range(len(input_list) -1):
+    #     if input_list[index] == input_list[index + 1]:
+    #         sum += input_list[index]
     
     return sum
     pass
